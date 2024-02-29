@@ -24,13 +24,13 @@ public class Druide {
 		return nom;
 	}
 
-	public String superpotion() {
+	public void superpotion() {
 		if (forcePotion > 7) {
-			return prendreParole() + "J'ai prepare une super potion de force " + forcePotion;
+			System.out.println( prendreParole() + "J'ai prepare une super potion de force " + forcePotion);
 
 		} else {
-			return prendreParole() + "Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force "
-					+ forcePotion;
+			System.out.println(prendreParole() + "Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force "
+					+ forcePotion);
 		}
 
 	}
@@ -46,10 +46,20 @@ public class Druide {
 		return "Le druide " + nom + " : ";
 	}
 
+	public void booster(Gaulois gaulois) {
+		// TODO Auto-generated method stub
+		if (gaulois.getNom()=="Obelix") {
+			System.out.println(prendreParole() +"Non, Obélix !... Tu n’auras pas de potion magique ! ");
+		} else {
+			gaulois.boirepotion(forcePotion);
+		}
+
+	}
+	
 	public static void main(String[] args) {
 		Druide paranomix;
 		paranomix = new Druide("Paranomix", 5, 10);
 		paranomix.preparerPotion();
-		System.out.println(paranomix.superpotion());
+		paranomix.superpotion();
 	}
 }
