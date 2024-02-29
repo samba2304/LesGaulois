@@ -35,10 +35,10 @@ public class Romain {
 			parler("J'abandonne...");
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		Romain julius;
-		julius= new Romain("Jules", 0);
+		julius = new Romain("Jules", 0);
 		System.out.println(julius.prendreParole());
 		julius.parler("HAHAH");
 		julius.recevoirCoup(12);
