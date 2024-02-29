@@ -1,5 +1,7 @@
 package personnages;
 
+//Modifier 29 fev 13:20
+
 public class Romain {
 	private String nom;
 	private int force;
