@@ -19,7 +19,7 @@ public class Gaulois {
 
 	}
 
-	private String prendreParole() {
+	public String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 
 	}
@@ -29,7 +29,6 @@ public class Gaulois {
 		romain.recevoirCoup(force / 3);
 	}
 
-	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 
@@ -37,6 +36,17 @@ public class Gaulois {
 
 	public static void main(String[] args) {
 		// créer un main permettant de tester la classe Gaulois
+		Gaulois asterix;
+		asterix = new Gaulois("Asterix", 8);
+		System.out.println(asterix);
+		System.out.println(asterix.prendreParole());
+		asterix.parler("Hello");
+		Romain cesar;
+		cesar = new Romain("Cesar", 0);
+		System.out.println(cesar.getForce());
+		asterix.frapper(cesar);
+		System.out.println(cesar.getForce());
+		
 	}
 
 }
