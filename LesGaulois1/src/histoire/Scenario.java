@@ -13,7 +13,7 @@ public class Scenario {
 		asterix=new Gaulois("Asterix", 6);
 		obelix=new Gaulois("Obelix", 25);
 		Romain minus;
-		minus= new Romain("Minus",6);
+		minus= new Romain("Minus",6,4);
 		panoromix.prendreParole();
 		panoromix.parler("Je vais aller préparer une petite potion...");
 		panoromix.preparerPotion();
