@@ -6,17 +6,15 @@ public enum Equipement {
 	private String nom;
 
 	private Equipement(String nom) {
-		// TODO Auto-generated constructor stub
 		this.nom = nom;
 	}
 
+	@Override
 	public String toString() {
 		return nom;
 	}
 	
-	public void afficherEq() {
-		// TODO Auto-generated method stub
-		
+	public void afficherEq() {		
 	}
 
 }

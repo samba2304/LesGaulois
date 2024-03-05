@@ -18,7 +18,7 @@ public class Scenario {
 		obelix.parler("Par Bélénos, ce n'est pas juste !");
 		druide.booster(asterix);
 		asterix.parler("Bonjour");
-		Romain minus = new Romain("Minus", 6);
+		Romain minus = new Romain("Minus", 12);
 		Romain milexcus = new Romain("Milexcus", 8);
 		minus.sEquiper(Equipement.Bouclier);
 		minus.sEquiper(Equipement.Casque);
@@ -30,7 +30,8 @@ public class Scenario {
 		milexcus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(milexcus);
-		} while (milexcus.getForce() > 0);
+		} while (milexcus.getForce() >0);
+
 		
 //		Partie a decommenter
 		

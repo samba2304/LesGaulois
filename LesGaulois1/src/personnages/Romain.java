@@ -59,7 +59,7 @@ public class Romain {
 	}
 
 	private int calculResistanceEquipement(int forceCoup) {
-  String texte;
+		String texte;
 		texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
 		int resistanceEquipement = 0;
 		if (nbEquipements != 0) {
@@ -98,9 +98,11 @@ public class Romain {
 		// Precondition
 		assert force > 0;
 		int oldForce = force;
+		
 		forceCoup = calculResistanceEquipement(forceCoup);
+		
 		force -= forceCoup;
-		if (force == 0) {
+		if (force > 0) {
 			parler("Aïe");
 		} else {
 			equipementEjecte = ejecterEquipement();
