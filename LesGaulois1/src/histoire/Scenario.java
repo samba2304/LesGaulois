@@ -19,7 +19,7 @@ public class Scenario {
 		druide.booster(asterix);
 		asterix.parler("Bonjour");
 		Romain minus = new Romain("Minus", 12);
-		Romain milexcus = new Romain("Milexcus", 8);
+		Romain milexcus = new Romain("Milexcus", 22);
 		minus.sEquiper(Equipement.Bouclier);
 		minus.sEquiper(Equipement.Casque);
 		milexcus.sEquiper(Equipement.Casque);

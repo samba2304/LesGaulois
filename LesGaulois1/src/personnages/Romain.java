@@ -2,27 +2,14 @@ package personnages;
 
 //Modifier 29 fev 13:20
 
-public class Romain {
-	private String nom;
-	private int force;
+public class Romain extends Personnage {
 	Equipement[] equipements;
 	private int nbEquipements = 0;
 
 	public Romain(String nom, int force) {
-		assert force > 0 : "la force d’un Romain est toujours positive";
+		super(nom, force);
 		assert nbEquipements <= 2 : "Max 2 equipements";
-		this.nom = nom;
-		this.force = force;
 		equipements = new Equipement[2];
-
-	}
-
-	public int getForce() {
-		return force;
-	}
-
-	public String getNom() {
-		return nom;
 	}
 
 	public void parler(String texte) {
@@ -30,7 +17,7 @@ public class Romain {
 	}
 
 	public String prendreParole() {
-		return "Le romain " + nom + " : ";
+		return "Le romain " + getNom() + " : ";
 	}
 
 	public void sEquiper(Equipement equipment) {
@@ -60,7 +47,7 @@ public class Romain {
 
 	private int calculResistanceEquipement(int forceCoup) {
 		String texte;
-		texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
+		texte = "Ma force est de " + getForce() + ", et la force du coup est de " + forceCoup;
 		int resistanceEquipement = 0;
 		if (nbEquipements != 0) {
 			texte += "\nMais heureusement, grace à mon équipement sa force est diminué de ";
@@ -82,10 +69,10 @@ public class Romain {
 
 	private Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipements];
-		System.out.println("L'équipement de " + nom + "s'envole sous la force du coup.");
+		System.out.println("L'équipement de " + getNom() + "s'envole sous la force du coup.");
 		int nbEquipementEjecte = 0;
 		for (int i = 0; i < nbEquipements; i++)
-			if (equipements[i] != null) { 
+			if (equipements[i] != null) {
 				equipementEjecte[nbEquipementEjecte] = equipements[i];
 				nbEquipementEjecte++;
 				equipements[i] = null;
@@ -96,20 +83,19 @@ public class Romain {
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;
 		// Precondition
-		assert force > 0;
-		int oldForce = force;
-		
+		assert getForce() > 0;
+		int oldForce = getForce();
 		forceCoup = calculResistanceEquipement(forceCoup);
-		
-		force -= forceCoup;
-		if (force > 0) {
+		setForce(forceCoup);
+		if (getForce() > 0) {
 			parler("Aïe");
-		} else {
+		} 
+		else {
 			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
 		}
 		// post condition la force a diminuée
-		assert force < oldForce;
+		assert getForce() < oldForce;
 		return equipementEjecte;
 	}
 

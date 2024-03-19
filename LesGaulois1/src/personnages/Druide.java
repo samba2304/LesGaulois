@@ -48,7 +48,7 @@ public class Druide {
 
 	public void booster(Gaulois gaulois) {
 		// TODO Auto-generated method stub
-		if (gaulois.getNom()=="Obelix") {
+		if (gaulois.getNom()== "Obélix") {
 			System.out.println(prendreParole() +"Non, Obélix !... Tu n’auras pas de potion magique ! ");
 		} else {
 			gaulois.boirepotion(forcePotion);
